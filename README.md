@@ -8,6 +8,7 @@ Clone of [cityAQ repo](https://github.com/jackkoppa/cityaq), to reproduce origin
 3. Refresh the page (if it works the first time, refresh again)
 
 **Expected:** Because the Angular `ServiceWorkerModule` is installed & configured, the page should load
+
 **Fail:** The page fails to load any content; Network tab shows a `504 - Gateway Timeout` error
 
 4. While still offline, remove the `/search` portion of the URL (which is the primary app route). URL should now look again like https://jackkoppa.github.io/cityaq-sw-issue
