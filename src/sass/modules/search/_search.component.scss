@@ -1,0 +1,10 @@
+mat-form-field.cities-input {
+    display: block;
+    margin: 10px auto 0;
+    width: calc(100% - 20px);
+
+    mat-progress-bar {
+        position: absolute;
+        bottom: -5px;
+    }
+}

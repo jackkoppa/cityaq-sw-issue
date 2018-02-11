@@ -1,0 +1,29 @@
+.banner-wrapper {
+    box-shadow: 0 2px 15px -2px $dark-grey;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 20px;
+    position: relative;
+    width: 100%;
+    z-index: map-get($z-index-levels, 'foreground-1');
+
+    button.mat-mini-fab {
+        background-color: $dark-grey;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+
+        .banner-icon {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+        }
+    }
+
+    .banner-color {
+        flex: 1 auto;
+        height: 20px;
+        position: relative;
+    }
+}

@@ -1,0 +1,81 @@
+$card-content-row-height: 60px;
+
+mat-card.city-card {
+    margin: map-get($gutters, 'sm');    
+    padding: 0;
+    transition: margin-left map-get($transition-speeds, 'fast') ease-out;
+
+    .city-map-background {
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: map-get($z-index-levels, 'background');
+    }
+
+    mat-card-header,
+    mat-card-content {
+        position: relative;
+        z-index: map-get($z-index-levels, 'midground-1');
+        margin: 0;
+    }
+
+    mat-card-header,
+    .parameter-averages {
+        padding: 10px;
+    }    
+}
+
+mat-card.city-card mat-card-header {   
+    transition: background-color map-get($transition-speeds, 'fast');
+
+    .mat-card-header-text { display: none; }
+    
+    .city-title {
+        display: block;
+        flex: 1 70%;
+
+        h2,
+        h5 { 
+            font-weight: 400;
+            margin: 0; 
+        }
+
+        h2 { font-size: 24px; }
+
+        h5 { font-size: 16px; }
+    }
+
+    .mat-icon-button {
+        bottom: 5px;
+        position: absolute;
+        right: 5px;
+
+        mat-icon {
+            font-size: 30px;
+            height: 30px;
+            line-height: 30px;
+            width: 30px;
+        }
+    }
+}
+
+mat-card.city-card mat-card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height map-get($transition-speeds, 'fast') ease-out;
+
+    &.expanded {
+        @for $i from 1 through 4 {
+            &.rows-#{$i} { max-height: 25px + $card-content-row-height * $i; } 
+        }    
+    }
+
+    .parameter-averages {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

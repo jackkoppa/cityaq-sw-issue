@@ -1,0 +1,120 @@
+/// @type Length
+$skyline-height: 160px;
+
+/// @type Length
+$skyline-foreground-height: $skyline-height * 0.6;
+
+// card should only be covered by the very tallest peaks on the foreground image
+/// @type Length
+$bottom-to-foreground-peaks: 84px;
+
+/// @type Number
+$carousel-slides: 3;
+
+// to make sure that all skyline divs are wide enough to transform at parallax rates
+/// @type Number
+$max-parallax-ratio: 1.25;
+
+
+.onboarding {
+    bottom: 0;    
+    position: relative;
+    width: 100%;
+    
+    .carousel-button {
+        position: absolute;
+        bottom: #{$skyline-height - 40px};
+        z-index: map-get($z-index-levels, 'foreground-3');
+    
+        &.carousel-left { left: map-get($gutters, 'sm'); }
+        &.carousel-right { right: map-get($gutters, 'sm'); } 
+    }    
+
+    .onboarding-carousel {         
+        width: calc(100vw * #{$carousel-slides});
+        will-change: transform;
+        
+        &:not(.background-only) {
+            position: relative;
+            z-index: map-get($z-index-levels, 'midground-3');  
+            
+            mat-card.onboarding-slide {
+                background-color: rgba($white, 0.7);
+            }
+        }
+
+        &.background-only {
+            left: 0;
+            position: absolute;
+            bottom: 0;
+            z-index: map-get($z-index-levels, 'base');
+
+            mat-card.onboarding-slide {
+                background-color: rgba($white, 1);
+                box-shadow: none;
+            }
+
+            .text-content {
+                visibility: hidden;
+            }
+        }
+
+        aq-onboarding-slides {
+            align-items: flex-end;        
+            display: flex;
+        }
+
+        mat-card.onboarding-slide {
+            flex: 1 1;
+            float: left;
+            margin: 0 #{map-get($gutters, 'md') * 2} $bottom-to-foreground-peaks;
+            padding: #{map-get($gutters, 'md') * 2};
+            position: relative;
+            width: calc(100vw - (#{map-get($gutters, 'md') * 4}));
+        }
+        
+        .text-content {
+            height: 100%;
+            padding-bottom: map-get($gutters, 'md');
+            position: relative;
+            z-index: map-get($z-index-levels, 'midground-3');
+        
+            h2 { 
+                font-weight: 400;
+                margin: 0;
+                text-transform: uppercase;
+            }
+            h3 { 
+                font-weight: 400;
+                margin-bottom: 0; 
+                text-transform: lowercase;
+            }
+        }
+    }  
+    
+    .skyline {
+        background-size: auto $skyline-height;
+        background-repeat: repeat-x;
+        background-position: center bottom;
+        bottom: 0;
+        height: 50%;
+        left: #{-100vw * $max-parallax-ratio};
+        position: absolute;
+        // add 2 extra widths for excess scrolling on either end
+        width: calc(100vw * #{$carousel-slides + 2} * #{$max-parallax-ratio});
+        will-change: transform;
+    
+        &.skyline-foreground {
+            background-image: url('../assets/icons/skyline-foreground.svg');
+            z-index: map-get($z-index-levels, 'foreground-1');
+        }
+        &.skyline-midground {
+            background-image: url('../assets/icons/skyline-midground.svg');
+            z-index: map-get($z-index-levels, 'midground-2');
+        }
+        &.skyline-background {
+            background-image: url('../assets/icons/skyline-background.svg');
+            z-index: map-get($z-index-levels, 'midground-1');
+        }
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "index": "/index.html",
+    "assetGroups": [{
+        "name": "app",
+        "installMode": "prefetch",
+        "resources": {
+            "files": [
+                "/favicon.ico",
+                "/index.html"
+            ],
+            "versionedFiles": [
+                "/*.bundle.css",
+                "/*.bundle.js",
+                "/*.chunk.js"
+            ]
+        }
+    }, {
+        "name": "assets",
+        "installMode": "lazy",
+        "updateMode": "prefetch",
+        "resources": {
+            "files": [
+                "/assets/**"
+            ]
+        }
+    }],
+    "dataGroups": [{
+        "name": "cities",
+        "urls": ["https://api.openaq.org/v1/cities"],
+        "cacheConfig": {
+            "maxSize": 2,
+            "maxAge": "14d",
+            "strategy": "performance"
+        }
+    },{
+        "name": "locations",
+        "urls": ["https://api.openaq.org/v1/locations"],
+        "cacheConfig": {
+            "maxSize": 20,
+            "maxAge": "3d",
+            "timeout": "3s",
+            "strategy": "freshness"
+        }
+    },{
+        "name": "latest",
+        "urls": ["https://api.openaq.org/v1/latest"],
+        "cacheConfig": {
+            "maxSize": 20,
+            "maxAge": "3d",
+            "timeout": "3s",
+            "strategy": "freshness"
+        }
+    },{
+        "name": "staticmap",
+        "urls": ["https://maps.googleapis.com/maps/api/staticmap"],
+        "cacheConfig": {
+            "maxSize": 20,
+            "maxAge": "365d",
+            "timeout": "5s",
+            "strategy": "performance"
+        }
+    }]
+}

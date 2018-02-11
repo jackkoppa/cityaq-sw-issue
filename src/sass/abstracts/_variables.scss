@@ -1,0 +1,90 @@
+// application-wide Sass variables
+
+//// fonts
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+
+//// colors
+/// @type Color
+$text-color: rgb(34, 34, 34) !default;
+
+/// @type Color
+$brand-color: rgb(229, 0, 80) !default;
+
+/// @type Color
+$light-grey: rgb(237, 237, 237) !default;
+
+/// @type Color
+$mid-grey: rgb(153, 153, 153) !default;
+
+/// @type Color
+$dark-grey: rgb(68, 68, 68) !default;
+
+/// @type Color
+$white: rgb(255, 255, 255) !default;
+
+
+//// container
+/// @type Length
+$max-width: 1180px !default;
+
+
+//// gutters
+/// @prop {String} keys - Keys are names for gutter sizes
+/// @prop {Map} values - Values are gutter sizes in px
+$gutters: (
+    'xs': 5px,
+    'sm': 10px,
+    'md': 15px,
+    'lg': 20px,
+    'xl': 25px
+) !default;
+
+
+//// z-index levels
+/// @prop {String} keys - Keys are z-index levels mapped to a given value
+/// @prop {Map} values - Values are numeric z-index heights
+$z-index-levels: (
+    'background': 0,
+    'base': 1,
+    'midground-1': 10,
+    'midground-2': 20,
+    'midground-3': 30,
+    'foreground-1': 40,
+    'foreground-2': 50,
+    'foreground-3': 60,
+    'popup-1': 70,
+    'popup-2': 80,
+    'popup-3': 90
+) !default;
+
+//// animation speeds
+/// @prop {String} keys - Keys are animation speed names
+/// @prop {Map} values - Values are the time of an animation in seconds
+$transition-speeds: (
+    'slow': 2.0s,
+    'medium': 1.0s,
+    'fast': 0.5s,
+    'very-fast': 0.25s
+) !default;
+
+//// breakpoints
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+    'small': 320px,
+    'medium': 768px,
+    'large': 1024px,
+) !default;
+
+
+//// urls
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;

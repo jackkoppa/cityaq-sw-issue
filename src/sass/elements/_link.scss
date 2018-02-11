@@ -1,0 +1,11 @@
+// styles for link elements
+
+a {
+    color: $aqi-accent-color;
+    text-decoration: none;
+
+    @include on-event {
+        color: $text-color;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,16 @@
+<div class="banner-wrapper">    
+    <div *ngFor="let color of colors; let first = first" 
+        class="banner-color"
+        [ngClass]="'bg-' + color">
+        <button mat-mini-fab *ngIf="first" (click)="triggerToggleMenu()">
+            <mat-icon aria-label="cityAQ Intro" 
+                class="banner-icon"
+                *ngIf="!menuVisible"
+                [@fade]>info</mat-icon>
+            <mat-icon aria-label="Close cityAQ Intro"
+                class="banner-icon"
+                *ngIf="menuVisible"
+                [@fade]>close</mat-icon>
+        </button>
+    </div>
+</div>

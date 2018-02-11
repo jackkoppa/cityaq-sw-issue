@@ -1,0 +1,54 @@
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import
+    'abstracts/variables',
+    'abstracts/aqi-variables',
+    'abstracts/functions',
+    'abstracts/mixins',
+    'abstracts/mq';
+
+// 2. Vendors
+@import
+    'vendor/normalize';
+
+// 3. Themes
+@import 
+    'themes/cityaq-base-material-theme';
+
+// 4. Base stuff
+@import
+    'base/base',
+    'base/fonts',
+    'base/typography',
+    'base/colors',
+    'base/helpers';
+
+// 5. Layout-related sections
+@import
+    'layout/page',
+    'layout/header',
+    'layout/footer';
+
+// 6. Elements
+@import
+    'elements/button',
+    'elements/link';
+
+// 7. Module styles
+@import
+    'modules/city/aqi-indicator.component',
+    'modules/city/city-card.component',
+    'modules/city/city-cards-list.component',
+    'modules/city/parameter-average-indicator.component',
+    'modules/home/banner.component',
+    'modules/home/home.component',    
+    'modules/onboarding/onboarding.component',
+    'modules/search/search.component',
+    'modules/shared/components/slide-delete.component',
+    'modules/shared/gestures/gestures.module',
+    'modules/shared/messaging/messaging.service';
+
+// 8. Shame (should eventually be empty)
+@import
+    'shame';

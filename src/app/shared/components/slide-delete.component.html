@@ -1,0 +1,17 @@
+<div class="slide-delete-wrapper">
+    <div class="slide-delete-background"></div>
+    <div *ngFor="let position of buttonPositions" 
+        class="delete-button"
+        [ngClass]="position">
+        <button mat-button (click)="triggerDelete()"><mat-icon>delete</mat-icon></button>        
+    </div>
+    <div class="slidable"
+        (panstart)="onPanStart($event)"
+        (panright)="onPan($event)"
+        (panleft)="onPan($event)"
+        (panend)="onPanEnd($event)"        
+        [style.left.px]="x"
+        [ngClass]="transitionClass">
+        <ng-content></ng-content>
+    </div>
+</div>

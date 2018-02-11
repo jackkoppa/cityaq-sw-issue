@@ -1,0 +1,21 @@
+// styles to be moved to appropriate SCSS files
+
+footer {
+    bottom: 0;
+    margin: 10px 10px 0;
+    position: absolute;
+    text-align: center;
+    width: calc(100% - 20px);
+}
+
+.intro {
+    text-align: center;
+}
+
+.mat-card {
+    margin-bottom: 10px;
+}
+
+.mat-card.city-card {
+    margin: 10px;
+}
